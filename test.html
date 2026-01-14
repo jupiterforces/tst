@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tests</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            padding-bottom: 80px;
+
+        }
+
+        .answer-btn {
+            transition: all .2s ease;
+        }
+
+        .answer-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .test-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 16px 10px 38px;
+            text-align: center;
+            cursor: pointer;
+            height: 100%;
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .collectioncard {
+            background: #f1d00f;
+            border-radius: 14px;
+            padding: 16px 10px 38px;
+            text-align: center;
+            cursor: pointer;
+            height: 100%;
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 18px rgba(255, 174, 0, 0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .test-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        }
+
+        .test-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            font-size: 1.25rem;
+        }
+
+        .test-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .test-meta {
+            font-size: 0.75rem;
+            color: #6c757d;
+        }
+
+        .test-meta i {
+            margin-right: 4px;
+        }
+
+
+        .question-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            padding: 6px 10px;
+
+            background: #0d6efd;
+            /* bootstrap primary – professional */
+            color: #fff;
+
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.3px;
+
+            border-radius: 0 0 14px 14px;
+
+            /* animation */
+            transform: translateX(-100%);
+            animation: slideInLeft 0.6s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #0d6efd, #084298);
+            box-shadow: 0 6px 20px rgba(13, 110, 253, 0.25);
+        }
+
+        .navbar-brand {
+            letter-spacing: 0.4px;
+        }
+
+        .navbar-brand img {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .navbar .btn-light {
+            font-weight: 600;
+            border-radius: 999px;
+            padding: 4px 14px;
+            transition: all 0.25s ease;
+        }
+
+        .navbar .btn-light:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 64px;
+            background: #ffffff;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 1050;
+            box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Nav item */
+        .bottom-nav .nav-item {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            color: #6c757d;
+            font-size: 11px;
+            font-weight: 500;
+            transition: all 0.25s ease;
+        }
+
+        /* Icon */
+        .bottom-nav .nav-item i {
+            display: block;
+            font-size: 22px;
+            margin-bottom: 2px;
+        }
+
+        /* Active */
+        .bottom-nav .nav-item.active {
+            color: #0d6efd;
+        }
+
+        /* Hover */
+        .bottom-nav .nav-item:hover {
+            color: #0d6efd;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2 fw-semibold" href="index.html">
+                <img src="Pulse.jpg" width="40" height="40" class="rounded-circle">
+                Pulse Medical
+            </a>
+            <a href="index.html" class="btn btn-light btn-sm">
+                <i class="bi bi-house"></i> Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- TEST SELECTION -->
+    <section id="test-selection" class="py-3 bg-light">
+        <div class="container">
+
+            <div class="accordion shadow-sm" id="accordionExample">
+                <div class="accordion-item border-0">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button fw-semibold py-2" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Anatomy Tests
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body pt-3">
+                            <div class="row g-3">
+
+                                <!-- TEST CARD -->
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card position-relative" onclick="startTest('skelete_system')">
+                                        <div class="test-icon bg-secondary-subtle text-secondary">
+                                            <i class="bi bi-bounding-box-circles"></i>
+                                        </div>
+
+                                        <div class="test-title">Suyaklar sistemasi</div>
+                                        <div class="test-meta">
+                                            <i class="bi bi-eye"></i>
+                                            <span id="view-skelete_system">0</span> marta yechildi
+                                        </div>
+                                        <div class="question-footer">
+                                            20 ta savol
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card position-relative" onclick="startTest('joints')">
+                                        <div class="test-icon bg-secondary-subtle text-secondary">
+                                            <i class="bi bi-bounding-box-circles"></i>
+                                        </div>
+
+                                        <div class="test-title">Bo'g'imlar</div>
+                                        <div class="test-meta">
+                                            <i class="bi bi-eye"></i>
+                                            <span id="view-joints">0</span> marta yechildi
+                                        </div>
+                                        <div class="question-footer">
+                                            20 ta savol
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card position-relative" onclick="startTest('muscles')">
+                                        <div class="test-icon bg-secondary-subtle text-secondary">
+                                            <i class="bi bi-bounding-box-circles"></i>
+                                        </div>
+
+                                        <div class="test-title">Mushaklar</div>
+                                        <div class="test-meta">
+                                            <i class="bi bi-eye"></i>
+                                            <span id="view-muscles">0</span> marta yechildi
+                                        </div>
+                                        <div class="question-footer">
+                                            20 ta savol
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TEST SCREEN -->
+    <section class="pb-5 mt-2">
+        <div class="container">
+            <div id="test-screen" class="card shadow-lg border-0 mx-auto d-none"
+                style="max-width: 600px; border-radius: 0.75rem; transition: all 0.3s;">
+                <div class="card-body p-3 position-relative">
+
+                    <!-- STOP BUTTON -->
+                    <button onclick="stopTest()"
+                        class="btn btn-sm btn-danger position-absolute top-0 end-0 m-3 shadow-sm"
+                        style="transition: transform 0.2s;">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+
+                    <!-- HEADER -->
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h5 id="test-title" class="fw-bold mb-0 fs-6 text-primary"></h5>
+                        <span id="timer" class="badge bg-secondary fs-7 me-5" style="font-weight:500;"></span>
+                    </div>
+
+                    <!-- QUESTION -->
+                    <p id="question-container" class="fs-6 fw-medium mb-3" style="line-height:1.4;"></p>
+
+                    <!-- ANSWERS -->
+                    <div id="answer-buttons" class="d-grid gap-2"></div>
+
+                    <!-- RESULT -->
+                    <div id="result" class="alert alert-success text-center fw-bold fs-6 mt-3 d-none"
+                        style="border-radius:0.5rem; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTTOM NAVIGATION FOOTER -->
+    <nav class="bottom-nav d-lg-none">
+        <a href="index.html" class="nav-item">
+            <i class="bi bi-house-fill"></i>
+            <span>Asosiy</span>
+        </a>
+        <a href="tests.html" class="nav-item active">
+            <i class="bi bi-ui-checks-grid"></i>
+            <span>Testlar</span>
+        </a>
+        <a href="cases.html" class="nav-item">
+            <i class="bi bi-journal-text"></i>
+            <span>Caselar</span>
+        </a>
+    </nav>
+
+    <script src="anatomy.js"></script>
+
+    <script>
+
+        function shuffle(array) {
+            return [...array]
+                .map(value => ({ value, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value);
+        }
+
+        function randomizeTest(questions) {
+            return shuffle(questions).map(question => {
+                const shuffledAnswers = shuffle(question.a);
+
+                return {
+                    q: question.q,
+                    a: shuffledAnswers,
+                    correct: shuffledAnswers.indexOf(
+                        question.a[question.correct]
+                    )
+                };
+            });
+        }
+
+
+        const tests = {
+            skelete_system: randomizeTest(TEST_QUESTIONS.skelete_system),
+            joints: randomizeTest(TEST_QUESTIONS.joints),
+            muscles: randomizeTest(TEST_QUESTIONS.muscles),
+        };
+
+
+
+        function updateViews(testName) {
+            let views = localStorage.getItem(`views_${testName}`);
+            views = views ? parseInt(views) + 1 : 1;
+            localStorage.setItem(`views_${testName}`, views);
+            document.getElementById(`view-${testName}`).innerText = views;
+        }
+
+        function loadViews() {
+            ['skelete_system', 'joints', 'muscles'].forEach(test => {
+                const views = localStorage.getItem(`views_${test}`) || 0;
+                document.getElementById(`view-${test}`).innerText = views;
+            });
+        }
+
+        function getTest(testName) {
+            return randomizeTest(TEST_QUESTIONS[testName]);
+        }
+
+
+        function startTest(testName) {
+            updateViews(testName); // 👁 view +1
+
+            currentTest = getTest[testName];
+            currentIndex = 0;
+            score = 0;
+
+            document.getElementById('test-selection').classList.add('d-none');
+            document.getElementById('test-screen').classList.remove('d-none');
+            document.getElementById('result').classList.add('d-none');
+
+            showQuestion();
+        }
+
+        window.onload = loadViews;
+
+
+        let currentTest = [];
+        let currentIndex = 0;
+        let score = 0;
+        let timer;
+        let timeLeft = 25;
+
+
+        function showQuestion() {
+            if (currentIndex >= currentTest.length) {
+                document.getElementById('result').innerText =
+                    `Natija: ${score} / ${currentTest.length}`;
+                document.getElementById('result').classList.remove('d-none');
+                return;
+            }
+
+            const q = currentTest[currentIndex];
+            document.getElementById('test-title').innerText =
+                `Savol ${currentIndex + 1}`;
+            document.getElementById('question-container').innerText = q.q;
+
+            const answerButtons = document.getElementById('answer-buttons');
+            answerButtons.innerHTML = '';
+
+            q.a.forEach((ans, index) => {
+                const btn = document.createElement('button');
+                btn.innerHTML = `<i class="bi bi-circle"></i> ${ans}`;
+                btn.className = 'btn btn-outline-primary btn-lg text-start answer-btn';
+                btn.onclick = () => selectAnswer(index);
+                answerButtons.appendChild(btn);
+            });
+
+            clearInterval(timer);
+            timeLeft = 25;
+            document.getElementById('timer').innerText = `⏱ ${timeLeft}s`;
+
+            timer = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timer').innerText = `⏱ ${timeLeft}s`;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    selectAnswer(-1);
+                }
+            }, 1000);
+        }
+
+        function selectAnswer(selectedIndex) {
+            clearInterval(timer);
+
+            const buttons = document.querySelectorAll('#answer-buttons button');
+            const correctIndex = currentTest[currentIndex].correct;
+
+            // Barcha tugmalarni disable qilish
+            buttons.forEach(btn => btn.disabled = true);
+
+            // To'g'ri javobni yashil qilish (yumshoq)
+            buttons[correctIndex].classList.remove('btn-outline-primary');
+            buttons[correctIndex].classList.add('btn-success');
+            buttons[correctIndex].style.transition = "background-color 0.3s, color 0.3s";
+
+            // Agar noto'g'ri bosilgan bo'lsa – yumshoq qizil
+            if (selectedIndex !== correctIndex && selectedIndex !== -1) {
+                buttons[selectedIndex].classList.remove('btn-outline-primary');
+                buttons[selectedIndex].classList.add('btn-danger');
+                buttons[selectedIndex].style.transition = "background-color 0.3s, color 0.3s";
+            }
+
+            // Ball hisoblash
+            if (selectedIndex === correctIndex) score++;
+
+            // Keyingi savolga 1 soniya kutib o'tish
+            setTimeout(() => {
+                currentIndex++;
+                showQuestion();
+            }, 1000);
+        }
+
+
+
+        function stopTest() {
+            if (confirm("Rostdan testni tugatmoqchimisiz?")) {
+                clearInterval(timer);
+                document.getElementById('test-screen').classList.add('d-none');
+                document.getElementById('test-selection').classList.remove('d-none');
+            }
+        }
+
+        // Testni bosganingizda view +1 qilish
+        function updateGlobalViews(testName) {
+            const ref = db.ref(`views/${testName}`);
+
+            // Transaction bilan +1
+            ref.transaction(current => (current || 0) + 1);
+
+            // Real-time ko‘rsatish
+            ref.on('value', snapshot => {
+                document.getElementById(`view-${testName}`).innerText = snapshot.val() || 0;
+            });
+        }
+
+        // Sahifa yuklanganda barcha viewlarni real-time ko‘rsatish
+        ['skelete_system', 'joints', 'muscles']
+        function startTest(testName) {
+            // Global view +1
+            const ref = db.ref(`views/${testName}`);
+            ref.transaction(current => (current || 0) + 1);
+
+            // Testni boshlash
+            currentTest = tests[testName];
+            currentIndex = 0;
+            score = 0;
+
+            document.getElementById('test-selection').classList.add('d-none');
+            document.getElementById('test-screen').classList.remove('d-none');
+            document.getElementById('result').classList.add('d-none');
+
+            showQuestion();
+        }
+
+
+        // Agar kerak bo‘lsa, real-time update bo‘lganda ham chaqirish mumkin
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Firebase App -->
+    <!-- Firebase CDN -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+    <script>
+
+        // Firebase konfiguratsiyasi
+        const firebaseConfig = {
+            apiKey: "AIzaSyCCqvgW8yTfmTHglz3siSLfLJo6NjXd_ws",
+            authDomain: "pulse-5f61d.firebaseapp.com",
+            databaseURL: "https://pulse-5f61d-default-rtdb.firebaseio.com",
+            projectId: "pulse-5f61d",
+            storageBucket: "pulse-5f61d.firebasestorage.app",
+            messagingSenderId: "359964012652",
+            appId: "1:359964012652:web:10722fdfb19d41a1052849",
+            measurementId: "G-QX686G4TT9"
+        };
+
+        // Firebase initialize
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+
+        // Global view funksiyasi
+        function updateGlobalViews(testName) {
+            const ref = db.ref(`views/${testName}`);
+            ref.transaction(current => (current || 0) + 0);
+            ref.on('value', snapshot => {
+                document.getElementById(`view-${testName}`).innerText = snapshot.val() || 0;
+            });
+        }
+
+        ['skelete_system', 'joints', 'muscles'].forEach(test => updateGlobalViews(test));
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const testName = params.get("test");
+
+            if (testName && tests[testName]) {
+                // Testni avtomatik boshlash
+                startTest(testName);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
