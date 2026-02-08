@@ -19,7 +19,7 @@
     <meta property="og:image" content="Pulse.jpg">
     <meta property="og:type" content="website">
 
-    <title>Yakuniy</title>
+    <title>Final exam</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -412,20 +412,24 @@
                         <i class="bi bi-trophy-fill"></i>
                     </div>
 
-                    <h5 class="fw-bold mb-2">Test yakunlandi 🎉</h5>
+                    <h5 class="fw-bold mb-2">Here we go 🎉</h5>
                     <p id="final-score" class="result-score mb-3"></p>
 
 
                     <div class="d-grid gap-2">
-                        <button onclick="generateCertificate()" class="btn btn-success">
-                            🎓 Sertifikatni yuklab olish
+                        <button onclick="generateCertificate()()" class="btn btn-success">
+                            🎓 Download the sertificate
                         </button>
                         <button onclick="shareResult()" class="btn btn-telegram">
-                            <i class="bi bi-telegram me-2"></i> Natijani ulashish
+                            <i class="bi bi-telegram me-2"></i> Share the result
+                        </button>
+                        <button onclick="reviewMistakes()" class="btn btn-warning">
+                            ⚠️ Review Mistakes
                         </button>
 
+
                         <button onclick="closeResult()" class="btn btn-outline-secondary">
-                            Yopish
+                            Close
                         </button>
                     </div>
                 </div>
@@ -445,7 +449,7 @@
                         <button class="accordion-button fw-semibold py-2" type="button" data-bs-toggle="collapse"
                             data-bs-target="#anatomyTests" aria-expanded="true">
 
-                            <i class="bi bi-heart-pulse me-2 text-danger"></i> Anatomiya
+                            <i class="bi bi-heart-pulse me-2 text-danger"></i> Anatomy
                         </button>
                     </h2>
 
@@ -456,32 +460,110 @@
 
                                 <!-- Suyaklar -->
                                 <div class="col-6 col-md-3">
-                                    <div class="test-card" onclick="startTest('mock1')">
+                                    <div class="test-card"
+                                        onclick="window.location.href='http://pulseimi.qzz.io/Arandomizedtopics.html?test=Vertebral_column'">
                                         <div class="test-icon bg-success-subtle text-success">
                                             <i class="bi bi-journal-medical fs-3"></i>
                                         </div>
-                                        <div class="test-title fw-semibold">Yakuniy Mock</div>
-                                        <div class="test-meta text-muted">
-                                            <i class="bi bi-eye me-1"></i>
-                                            <span id="view-mock1">0</span> marta yechildi
-                                        </div>
+                                        <div class="test-title fw-semibold">Vertebral column</div>
                                         <div class="question-footer">
-                                            20 ta savol
+                                            30 questions
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-3">
-                                    <div class="test-card" onclick="startTest('mock2')">
+                                    <div class="test-card"
+                                        onclick="window.location.href='http://pulseimi.qzz.io/Arandomizedtopics.html?test=Back'">
                                         <div class="test-icon bg-success-subtle text-success">
                                             <i class="bi bi-journal-medical fs-3"></i>
                                         </div>
-                                        <div class="test-title fw-semibold">Anatomiya 1-bob</div>
-                                        <div class="test-meta text-muted">
-                                            <i class="bi bi-eye me-1"></i>
-                                            <span id="view-mock2">0</span> marta yechildi
-                                        </div>
+                                        <div class="test-title fw-semibold">Back</div>
                                         <div class="question-footer">
-                                            30 ta savol
+                                            30 questions
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card"
+                                        onclick="window.location.href='http://pulseimi.qzz.io/Arandomizedtopics.html?test=Spinal_cord'">
+                                        <div class="test-icon bg-success-subtle text-success">
+                                            <i class="bi bi-journal-medical fs-3"></i>
+                                        </div>
+                                        <div class="test-title fw-semibold">Spinal cord</div>
+                                        <div class="question-footer">
+                                            30 questions
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card"
+                                        onclick="window.location.href='http://pulseimi.qzz.io/Arandomizedtopics.html?test=Torax'">
+                                        <div class="test-icon bg-success-subtle text-success">
+                                            <i class="bi bi-journal-medical fs-3"></i>
+                                        </div>
+                                        <div class="test-title fw-semibold">Torax</div>
+                                        <div class="question-footer">
+                                            30 questions
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card"
+                                        onclick="window.location.href='http://pulseimi.qzz.io/Arandomizedtopics.html?test=Mediastinum_Pleura'">
+                                        <div class="test-icon bg-success-subtle text-success">
+                                            <i class="bi bi-journal-medical fs-3"></i>
+                                        </div>
+                                        <div class="test-title fw-semibold">Mediastinum Pleura</div>
+                                        <div class="question-footer">
+                                            30 questions
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card"
+                                        onclick="window.location.href='http://pulseimi.qzz.io/Arandomizedtopics.html?test=Heart'">
+                                        <div class="test-icon bg-success-subtle text-success">
+                                            <i class="bi bi-journal-medical fs-3"></i>
+                                        </div>
+                                        <div class="test-title fw-semibold">Heart</div>
+                                        <div class="question-footer">
+                                            30 questions
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card"
+                                        onclick="window.location.href='http://pulseimi.qzz.io/Arandomizedtopics.html?test=Posterior_mediastinum'">
+                                        <div class="test-icon bg-success-subtle text-success">
+                                            <i class="bi bi-journal-medical fs-3"></i>
+                                        </div>
+                                        <div class="test-title fw-semibold">Posterior mediastinum</div>
+                                        <div class="question-footer">
+                                            30 questions
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card"
+                                        onclick="window.location.href='http://pulseimi.qzz.io/Arandomizedtopics.html?test=Anterior_abdominal'">
+                                        <div class="test-icon bg-success-subtle text-success">
+                                            <i class="bi bi-journal-medical fs-3"></i>
+                                        </div>
+                                        <div class="test-title fw-semibold">Anterior abdominal</div>
+                                        <div class="question-footer">
+                                            30 questions
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card"
+                                        onclick="window.location.href='http://pulseimi.qzz.io/Arandomizedtopics.html?test=Peritoneum'">
+                                        <div class="test-icon bg-success-subtle text-success">
+                                            <i class="bi bi-journal-medical fs-3"></i>
+                                        </div>
+                                        <div class="test-title fw-semibold">Peritoneum</div>
+                                        <div class="question-footer">
+                                            30 questions
                                         </div>
                                     </div>
                                 </div>
@@ -506,30 +588,29 @@
                         <div class="d-flex align-items-center gap-3">
                             <i class="bi bi-telegram fs-1"></i>
                             <div class="text-start">
-                                <h5 class="fw-bold mb-1">Telegram kanalimiz</h5>
-                                <p class="mb-0 small">Eng so‘nggi yangiliklar, testlar va caselar uchun.</p>
+                                <h5 class="fw-bold mb-1">Our Telegram channel</h5>
+                                <p class="mb-0 small">The latest news, tests and cases</p>
                             </div>
                         </div>
                         <a href="https://t.me/imipulse" target="_blank" class="btn btn-light btn-sm px-4 fw-semibold">
-                            Qo‘shilish <i class="bi bi-arrow-right-circle ms-1"></i>
+                            Join <i class="bi bi-arrow-right-circle ms-1"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- BOTTOM NAVIGATION FOOTER -->
         <nav class="bottom-nav d-lg-none">
             <a href="index.html" class="nav-item active">
                 <i class="bi bi-house-fill"></i>
-                <span>Asosiy</span>
+                <span>Home</span>
             </a>
             <a href="tests.html" class="nav-item">
                 <i class="bi bi-ui-checks-grid"></i>
-                <span>Testlar</span>
+                <span>Tests</span>
             </a>
             <a href="cases.html" class="nav-item">
                 <i class="bi bi-journal-text"></i>
-                <span>Caselar</span>
+                <span>Cases</span>
             </a>
         </nav>
     </section>
@@ -544,7 +625,7 @@
                     <h6 id="test-title" class="mb-0 fw-semibold"></h6>
 
                     <div class="d-flex align-items-center gap-2">
-                        <span id="timer" class="tg-timer">⏱ 20s</span>
+                        <span id="timer" class="tg-timer">⏱ 45s</span>
                         <button onclick="stopTest()" class="tg-close-btn">
                             <i class="bi bi-x-lg"></i>
                         </button>
@@ -569,9 +650,9 @@
     <div id="certificate-popup" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content" style="border-radius:20px; background:#f1f5f9; padding:20px; text-align:center;">
-                <h5 class="fw-bold mb-3">Sertifikat olish uchun ismingizni kiriting</h5>
+                <h5 class="fw-bold mb-3">Write your name to take the sertificate</h5>
                 <input type="text" id="cert-name-input" class="form-control mb-3" placeholder="Ism Familiya">
-                <button class="btn btn-primary w-50" onclick="generateCertificate()">Yuklab olish</button>
+                <button class="btn btn-primary w-50" onclick="generateCertificate()">Download</button>
 
             </div>
         </div>
@@ -620,11 +701,17 @@
             <img src="Pulse.jpg" alt="Pulse Logo"
                 style="width:100px; height:100px; border-radius:50%; box-shadow:0 5px 20px rgba(0,0,0,0.3); object-fit:cover;">
         </div>
+
+
     </div>
 
 
 
-    <script src="finals.js"></script>
+
+
+
+    <script src="Artopics.js"></script>
+
 
 
     <script>
@@ -635,24 +722,30 @@
                 .map(({ value }) => value);
         }
 
-        function randomizeTest(questions) {
-            return shuffle(questions).map(question => {
-                const shuffledAnswers = shuffle(question.a);
-
+        // Har safar test bosilganda 25 ta savolni random tanlash va javoblarni ham random qilish
+        function getRandomTest(questions, n = 30) {
+            const shuffledQuestions = shuffle(questions).slice(0, n);
+            return shuffledQuestions.map(q => {
+                const shuffledAnswers = shuffle(q.a);
                 return {
-                    q: question.q,
+                    q: q.q,
                     a: shuffledAnswers,
-                    correct: shuffledAnswers.indexOf(
-                        question.a[question.correct]
-                    )
+                    correct: shuffledAnswers.indexOf(q.a[q.correct]) // original to'g'ri javob indexi
                 };
             });
         }
 
 
         const tests = {
-            mock1: randomizeTest(TEST_QUESTIONS.mock1),
-            mock2: randomizeTest(TEST_QUESTIONS.mock2),
+            Vertebral_column: getRandomTest(TEST_QUESTIONS.Vertebral_column),
+            Back: getRandomTest(TEST_QUESTIONS.Back),
+            Spinal_cord: getRandomTest(TEST_QUESTIONS.Spinal_cord),
+            Torax: getRandomTest(TEST_QUESTIONS.Torax),
+            Mediastinum_Pleura: getRandomTest(TEST_QUESTIONS.Mediastinum_Pleura),
+            Heart: getRandomTest(TEST_QUESTIONS.Heart),
+            Posterior_mediastinum: getRandomTest(TEST_QUESTIONS.Posterior_mediastinum),
+            Anterior_abdominal: getRandomTest(TEST_QUESTIONS.Anterior_abdominal),
+            Peritoneum: getRandomTest(TEST_QUESTIONS.Peritoneum),
         };
 
         // Sertifikat yaratish funksiyasida
@@ -692,8 +785,15 @@
             const percent = Math.round((score / currentTest.length) * 100);
 
             const testTitleMap = {
-                mock1: "Yakuniy Mock 1",
-                mock2: "Anatomy Chapter 1"
+                Vertebral_column: "Vertebral column",
+                Back: "Back",
+                Spinal_cord: "Spinal cord",
+                Torax: "Torax",
+                Mediastinum_Pleura: "Mediastinum Pleura",
+                Heart: "Heart",
+                Posterior_mediastinum: "Posterior mediastinum",
+                Anterior_abdominal: "Anterior abdominal",
+                Peritoneum: "Peritoneum"
             };
 
             const certData = {
@@ -716,32 +816,18 @@
             window.location.href = "certificate.html";
         }
 
-
-        function updateViews(testName) {
-            let views = localStorage.getItem(`views_${testName}`);
-            views = views ? parseInt(views) + 1 : 1;
-            localStorage.setItem(`views_${testName}`, views);
-            document.getElementById(`view-${testName}`).innerText = views;
-        }
-
-        function loadViews() {
-            ['mock1', 'mock2'].forEach(test => {
-                const views = localStorage.getItem(`views_${test}`) || 0;
-                document.getElementById(`view-${test}`).innerText = views;
-            });
-        }
-
         function getTest(testName) {
             return randomizeTest(TEST_QUESTIONS[testName]);
         }
 
 
         function startTest(testName) {
-            updateViews(testName); // 👁 view +1
 
             currentTest = getTest[testName];
             currentIndex = 0;
             score = 0;
+
+            currentTest = getRandomTest(TEST_QUESTIONS[testName], 30);
 
             document.getElementById('test-selection').classList.add('d-none');
             document.getElementById('test-screen').classList.remove('d-none');
@@ -750,7 +836,6 @@
             showQuestion();
         }
 
-        window.onload = loadViews;
 
 
         let currentTest = [];
@@ -758,13 +843,13 @@
         let currentIndex = 0;
         let score = 0;
         let timer;
-        let timeLeft = 25;
+        let timeLeft = 45;
 
         function showResultPopup() {
             document.getElementById('test-screen').classList.add('d-none');
 
             document.getElementById('final-score').innerText =
-                `Siz ${score} / ${currentTest.length} ta savolga to‘g‘ri javob berdingiz`;
+                `Your score is: ${score} / ${currentTest.length}`;
 
             const modalEl = document.getElementById('resultModal');
             const modal = new bootstrap.Modal(modalEl, {
@@ -782,7 +867,7 @@
         function shareResult() {
             const text =
                 `🩺 Pulse Medical\n` +
-                `📊 Mock test natijam:\n` +
+                `📊 My result:\n` +
                 `✅ ${score} / ${currentTest.length}\n\n`
 
 
@@ -804,7 +889,7 @@
 
             const q = currentTest[currentIndex];
             document.getElementById('test-title').innerText =
-                `Savol ${currentIndex + 1}`;
+                `Question ${currentIndex + 1}`;
             document.getElementById('question-container').innerText = q.q;
 
             const answerButtons = document.getElementById('answer-buttons');
@@ -819,7 +904,7 @@
             });
 
             clearInterval(timer);
-            timeLeft = 25;
+            timeLeft = 45;
             document.getElementById('timer').innerText = `⏱ ${timeLeft}s`;
 
             timer = setInterval(() => {
@@ -831,6 +916,9 @@
                 }
             }, 1000);
         }
+
+        let mistakes = []; // Noto'g'ri javob bergan savollar
+
 
         function selectAnswer(selectedIndex) {
             clearInterval(timer);
@@ -851,6 +939,13 @@
                 buttons[selectedIndex].classList.remove('btn-outline-primary');
                 buttons[selectedIndex].classList.add('btn-danger');
                 buttons[selectedIndex].style.transition = "background-color 0.3s, color 0.3s";
+
+                mistakes.push({
+                    q: currentTest[currentIndex].q,
+                    a: currentTest[currentIndex].a,
+                    correct: correctIndex,
+                    selected: selectedIndex
+                });
             }
 
             // Ball hisoblash
@@ -866,7 +961,7 @@
 
 
         function stopTest() {
-            if (confirm("Rostdan testni tugatmoqchimisiz?")) {
+            if (confirm("Really want to end the test?")) {
                 clearInterval(timer);
                 document.getElementById('test-screen').classList.add('d-none');
                 document.getElementById('test-selection').classList.remove('d-none');
@@ -886,13 +981,9 @@
             });
         }
 
-        // Sahifa yuklanganda barcha viewlarni real-time ko‘rsatish
-        ['mock1', 'mock2'].forEach(test => updateGlobalViews(test));
 
         function startTest(testName) {
             // Global view +1
-            const ref = db.ref(`views/${testName}`);
-            ref.transaction(current => (current || 0) + 1);
 
             // Testni boshlash
             currentTest = tests[testName];
@@ -906,6 +997,29 @@
 
             showQuestion();
         }
+
+        function reviewMistakes() {
+            if (mistakes.length === 0) {
+                alert("Congratulations! You had no mistakes 🎉");
+                return;
+            }
+
+            // Hozirgi testni xatolar bilan almashtirish
+            currentTest = [...mistakes];
+            currentIndex = 0;
+            score = 0; // Qayta hisoblash
+            mistakes = []; // Yangi test uchun tozalash
+
+            // Bootstrap modalini API orqali yopish
+            const modalEl = document.getElementById('resultModal');
+            const modal = bootstrap.Modal.getInstance(modalEl);
+            if (modal) modal.hide();
+
+            // Test oynasini ko‘rsatish
+            document.getElementById('test-screen').classList.remove('d-none');
+            showQuestion();
+        }
+
 
     </script>
 
@@ -937,16 +1051,7 @@
         firebase.initializeApp(firebaseConfig);
         const db = firebase.database();
 
-        // Global view funksiyasi
-        function updateGlobalViews(testName) {
-            const ref = db.ref(`views/${testName}`);
-            ref.transaction(current => (current || 0) + 0);
-            ref.on('value', snapshot => {
-                document.getElementById(`view-${testName}`).innerText = snapshot.val() || 0;
-            });
-        }
 
-        ['mock1', 'mock2'].forEach(test => updateGlobalViews(test));
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {

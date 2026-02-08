@@ -538,6 +538,22 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card position-relative" onclick="startTest('l23')">
+                                        <div class="test-icon bg-warning-subtle text-warning">
+                                            <i class="bi bi-arrows-expand"></i>
+                                        </div>
+
+                                        <div class="test-title">lesson 23</div>
+                                        <div class="test-meta">
+                                            <i class="bi bi-eye"></i>
+                                            <span id="view-l23">0</span> solved
+                                        </div>
+                                        <div class="question-footer">
+                                            28 questions
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -643,6 +659,7 @@
             gastrointestinal: randomizeTest(TEST_QUESTIONS.gastrointestinal),
             diaphragm: randomizeTest(TEST_QUESTIONS.diaphragm),
             l22: randomizeTest(TEST_QUESTIONS.l22),
+            l23: randomizeTest(TEST_QUESTIONS.l23),
         };
 
 
@@ -655,7 +672,7 @@
         }
 
         function loadViews() {
-            ['skelete_system', 'l22', 'diaphragm', 'gastrointestinal', 'peritoneum', 'anterior_abdominal', 'posterior_mediastinum', 'pericardium_heart1', 'pericardium_heart', 'mediastinum_pleura', 'thoracic_wall', 'spinal_cord', 'joints', 'muscles', 'nerves', 'circular', 'organs', 'vertebral_column', 'back'].forEach(test => {
+            ['skelete_system', 'l23', 'l22', 'diaphragm', 'gastrointestinal', 'peritoneum', 'anterior_abdominal', 'posterior_mediastinum', 'pericardium_heart1', 'pericardium_heart', 'mediastinum_pleura', 'thoracic_wall', 'spinal_cord', 'joints', 'muscles', 'nerves', 'circular', 'organs', 'vertebral_column', 'back'].forEach(test => {
                 const views = localStorage.getItem(`views_${test}`) || 0;
                 document.getElementById(`view-${test}`).innerText = views;
             });
@@ -783,7 +800,7 @@
         }
 
         // Sahifa yuklanganda barcha viewlarni real-time ko‘rsatish
-        ['skelete_system', 'l22', 'diaphragm', 'gastrointestinal', 'peritoneum', 'anterior_abdominal', 'posterior_mediastinum', 'pericardium_heart1', 'pericardium_heart', 'mediastinum_pleura', 'thoracic_wall', 'spinal_cord', 'back', 'joints', 'muscles', 'nerves', 'circular', 'organs', 'vertebral_column'].forEach(test => updateGlobalViews(test));
+        ['skelete_system', 'l22', 'l23', 'diaphragm', 'gastrointestinal', 'peritoneum', 'anterior_abdominal', 'posterior_mediastinum', 'pericardium_heart1', 'pericardium_heart', 'mediastinum_pleura', 'thoracic_wall', 'spinal_cord', 'back', 'joints', 'muscles', 'nerves', 'circular', 'organs', 'vertebral_column'].forEach(test => updateGlobalViews(test));
 
         function startTest(testName) {
             // Global view +1
@@ -840,7 +857,7 @@
             });
         }
 
-        ['skelete_system', 'l22', 'diaphragm', 'gastrointestinal', 'peritoneum', 'anterior_abdominal', 'posterior_mediastinum', 'pericardium_heart1', 'pericardium_heart', 'mediastinum_pleura', 'thoracic_wall', 'spinal_cord', 'back', 'joints', 'muscles', 'nerves', 'circular', 'organs', 'vertebral_column'].forEach(test => updateGlobalViews(test));
+        ['skelete_system', 'l22', 'l23', 'diaphragm', 'gastrointestinal', 'peritoneum', 'anterior_abdominal', 'posterior_mediastinum', 'pericardium_heart1', 'pericardium_heart', 'mediastinum_pleura', 'thoracic_wall', 'spinal_cord', 'back', 'joints', 'muscles', 'nerves', 'circular', 'organs', 'vertebral_column'].forEach(test => updateGlobalViews(test));
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {

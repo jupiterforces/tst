@@ -208,4 +208,278 @@ window.TEST_QUESTIONS = {
       correct: 2,
     },
   ],
+  mock2: [
+    {
+      q: "What is the relatively immobile attachment point of a muscle called?",
+      a: ["Insertion", "Origin", "Raphe", "Aponeurosis"],
+      correct: 1,
+    },
+    {
+      q: "Functionally, how are fibrous joints classified?",
+      a: [
+        "Slightly movable",
+        "Completely free",
+        "Multidirectional",
+        "Only rotational",
+        "Highly movable",
+      ],
+      correct: 0,
+    },
+    {
+      q: "What type of movement occurs at a hinge joint?",
+      a: [
+        "Only flexion and extension",
+        "Rotational movement",
+        "Gliding",
+        "Circumduction",
+      ],
+      correct: 0,
+    },
+    {
+      q: "What is the characteristic of a ball-and-socket joint?",
+      a: [
+        "Free movement in all directions",
+        "Flexion and extension",
+        "Gliding",
+        "Only rotational",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Through which vessel does blood leave the systemic circulation?",
+      a: [
+        "Through the aorta",
+        "Through the pulmonary vein",
+        "Through the superior vena cava",
+        "Through the inferior vena cava",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Which system controls the activity of the heart?",
+      a: [
+        "Autonomic nervous system",
+        "Somatic nervous system",
+        "Central nervous system",
+        "Peripheral nervous system",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Where does the majority of nutrient absorption occur?",
+      a: ["Small intestine", "Large intestine", "Stomach", "Oral cavity"],
+      correct: 0,
+    },
+    {
+      q: "Where does gas exchange take place?",
+      a: [
+        "Alveolar walls",
+        "Inside the bronchi",
+        "In the larynx",
+        "In the tracheal cavity",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Which layer is the epidermis?",
+      a: [
+        "Superficial epithelium",
+        "Deep connective tissue",
+        "Adipose layer",
+        "Muscle layer",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Which tissue forms the nails?",
+      a: [
+        "Epidermal thickening",
+        "Dermal fibers",
+        "Hypodermal fat",
+        "Muscle fibers",
+      ],
+      correct: 0,
+    },
+    {
+      q: "What is the primary function of pulmonary circulation?",
+      a: [
+        "Gas exchange",
+        "Transport of nutrients",
+        "Hormone distribution",
+        "Waste removal",
+      ],
+      correct: 0,
+    },
+    {
+      q: "What does the peripheral nervous system consist of?",
+      a: [
+        "Cranial and spinal nerves",
+        "Brain and spinal cord",
+        "Ganglion nuclei",
+        "Tract ventricles",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Functionally, how is the nervous system divided?",
+      a: [
+        "Somatic and visceral systems",
+        "Central and peripheral systems",
+        "Sensory and motor systems",
+        "Conscious reflex system",
+      ],
+      correct: 0,
+    },
+    {
+      q: "What does the somatic nervous system control?",
+      a: [
+        "Voluntary movements",
+        "Internal organs",
+        "Gland secretion",
+        "Cardiac activity",
+      ],
+      correct: 0,
+    },
+    {
+      q: "What is the structural unit of the nervous system?",
+      a: ["Neuron cell", "Neuroglia cell", "Ganglion structure", "Axon fiber"],
+      correct: 0,
+    },
+    {
+      q: "What is the main function of dendrites?",
+      a: [
+        "Carry impulses toward the cell body",
+        "Carry impulses away from the cell body",
+        "Form myelin",
+        "Form synapses",
+      ],
+      correct: 0,
+    },
+    {
+      q: "What is the primary function of axons?",
+      a: [
+        "Transmit impulses away",
+        "Transmit impulses toward",
+        "Store information",
+        "Break down myelin",
+      ],
+      correct: 0,
+    },
+    {
+      q: "In which senses are bipolar neurons found?",
+      a: [
+        "Smell, vision, hearing",
+        "Pain, temperature, touch",
+        "Pressure, proprioception",
+        "Motor reflexes",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Where are multipolar neurons predominantly found?",
+      a: [
+        "Central nervous system",
+        "Peripheral ganglia",
+        "Sensory nerves",
+        "Receptor cells",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Which cells form myelin in the CNS?",
+      a: ["Oligodendrocytes", "Schwann cells", "Astrocytes", "Microglia"],
+      correct: 0,
+    },
+    {
+      q: "Where is gray matter located in the spinal cord?",
+      a: ["Central region", "Peripheral region", "Ventral side", "Dorsal side"],
+      correct: 0,
+    },
+    {
+      q: "At what level does the conus medullaris end in adults?",
+      a: ["L1-L2", "L3-L4", "T12-L1", "L4-L5"],
+      correct: 0,
+    },
+    {
+      q: "What is the function of osteoblasts?",
+      a: [
+        "Bone formation",
+        "Calcium excretion",
+        "Bone resorption",
+        "Mineral breakdown",
+      ],
+      correct: 0,
+    },
+    {
+      q: "How does thyroid hormone affect bones?",
+      a: [
+        "Stimulates bone formation",
+        "Increases bone resorption",
+        "Reduces osteoid synthesis",
+        "Accelerates mineralization",
+      ],
+      correct: 1,
+    },
+    {
+      q: "What is the main cause of osteomalacia?",
+      a: [
+        "Increased osteoclast activity",
+        "Vitamin D deficiency",
+        "Excess osteoblast activity",
+        "Excess collagen",
+      ],
+      correct: 1,
+    },
+    {
+      q: "What is the main mechanism in osteoporosis?",
+      a: [
+        "Increased bone formation",
+        "Resorption equals formation",
+        "Resorption faster than formation",
+        "Excess osteoid synthesis",
+      ],
+      correct: 2,
+    },
+    {
+      q: "What change occurs in osteopetrosis?",
+      a: [
+        "Reduced bone mass",
+        "Narrowing of bone marrow cavity",
+        "Increased bone rigidity",
+        "Expansion of diploë",
+      ],
+      correct: 1,
+    },
+    {
+      q: "What is the main function of the kidneys?",
+      a: [
+        "Blood filtration",
+        "Hormone secretion",
+        "Blood production",
+        "Energy production",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Which is an example of a ball-and-socket joint?",
+      a: [
+        "Shoulder and hip joints",
+        "Elbow joint",
+        "Pubic symphysis",
+        "Atlantoaxial joint",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Which law explains joint, muscle, and skin innervation by a single nerve?",
+      a: [
+        "Hilton's law",
+        "Wolf's law",
+        "Laplace's law",
+        "Sherrington's law",
+        "Boyle's law",
+      ],
+      correct: 0,
+    },
+  ],
 };

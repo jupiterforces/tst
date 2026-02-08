@@ -263,6 +263,40 @@
 
                                     </div>
                                 </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card position-relative" onclick="startTest('meiosis')">
+                                        <div class="test-icon bg-secondary-subtle text-secondary">
+                                            <i class="bi bi-bounding-box-circles"></i>
+                                        </div>
+
+                                        <div class="test-title">Meiosis</div>
+                                        <div class="test-meta">
+                                            <i class="bi bi-eye"></i>
+                                            <span id="view-meiosis">0</span> solved
+                                        </div>
+                                        <div class="question-footer">
+                                            29 questions
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card position-relative" onclick="startTest('pedigree')">
+                                        <div class="test-icon bg-secondary-subtle text-secondary">
+                                            <i class="bi bi-bounding-box-circles"></i>
+                                        </div>
+
+                                        <div class="test-title">Pedigree</div>
+                                        <div class="test-meta">
+                                            <i class="bi bi-eye"></i>
+                                            <span id="view-pedigree">0</span> solved
+                                        </div>
+                                        <div class="question-footer">
+                                            39 questions
+                                        </div>
+
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -353,6 +387,8 @@
         const tests = {
             topic1: randomizeTest(TEST_QUESTIONS.topic1),
             genetics: randomizeTest(TEST_QUESTIONS.genetics),
+            meiosis: randomizeTest(TEST_QUESTIONS.meiosis),
+            pedigree: randomizeTest(TEST_QUESTIONS.pedigree),
         };
 
 
@@ -365,7 +401,7 @@
         }
 
         function loadViews() {
-            ['topic1', 'genetics'].forEach(test => {
+            ['topic1', 'genetics', 'meiosis', 'pedigree'].forEach(test => {
                 const views = localStorage.getItem(`views_${test}`) || 0;
                 document.getElementById(`view-${test}`).innerText = views;
             });
@@ -493,7 +529,7 @@
         }
 
         // Sahifa yuklanganda barcha viewlarni real-time ko‘rsatish
-        ['topic1', 'genetics']
+        ['topic1', 'genetics', 'meiosis', 'pedigree']
         function startTest(testName) {
             // Global view +1
             const ref = db.ref(`views/${testName}`);
@@ -549,7 +585,7 @@
             });
         }
 
-        ['topic1', 'genetics',].forEach(test => updateGlobalViews(test));
+        ['topic1', 'genetics', 'meiosis', 'pedigree'].forEach(test => updateGlobalViews(test));
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {

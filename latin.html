@@ -412,20 +412,20 @@
                         <i class="bi bi-trophy-fill"></i>
                     </div>
 
-                    <h5 class="fw-bold mb-2">Test yakunlandi 🎉</h5>
+                    <h5 class="fw-bold mb-2">Here we go 🎉</h5>
                     <p id="final-score" class="result-score mb-3"></p>
 
 
                     <div class="d-grid gap-2">
-                        <button onclick="generateCertificate()" class="btn btn-success">
-                            🎓 Sertifikatni yuklab olish
+                        <button onclick="generateCertificate()()" class="btn btn-success">
+                            🎓 Download the sertificate
                         </button>
                         <button onclick="shareResult()" class="btn btn-telegram">
-                            <i class="bi bi-telegram me-2"></i> Natijani ulashish
+                            <i class="bi bi-telegram me-2"></i> Share the result
                         </button>
 
                         <button onclick="closeResult()" class="btn btn-outline-secondary">
-                            Yopish
+                            Close
                         </button>
                     </div>
                 </div>
@@ -445,7 +445,7 @@
                         <button class="accordion-button fw-semibold py-2" type="button" data-bs-toggle="collapse"
                             data-bs-target="#anatomyTests" aria-expanded="true">
 
-                            <i class="bi bi-heart-pulse me-2 text-danger"></i> Anatomiya
+                            <i class="bi bi-heart-pulse me-2 text-danger"></i> Latin language
                         </button>
                     </h2>
 
@@ -456,32 +456,18 @@
 
                                 <!-- Suyaklar -->
                                 <div class="col-6 col-md-3">
-                                    <div class="test-card" onclick="startTest('mock1')">
+                                    <div class="test-card"
+                                        onclick="window.location.href='http://pulseimi.qzz.io/latin.html?test=mock1'">
                                         <div class="test-icon bg-success-subtle text-success">
                                             <i class="bi bi-journal-medical fs-3"></i>
                                         </div>
-                                        <div class="test-title fw-semibold">Yakuniy Mock</div>
+                                        <div class="test-title fw-semibold">Final mock</div>
                                         <div class="test-meta text-muted">
                                             <i class="bi bi-eye me-1"></i>
-                                            <span id="view-mock1">0</span> marta yechildi
+                                            <span id="view-mock1">0</span> solved
                                         </div>
                                         <div class="question-footer">
-                                            20 ta savol
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <div class="test-card" onclick="startTest('mock2')">
-                                        <div class="test-icon bg-success-subtle text-success">
-                                            <i class="bi bi-journal-medical fs-3"></i>
-                                        </div>
-                                        <div class="test-title fw-semibold">Anatomiya 1-bob</div>
-                                        <div class="test-meta text-muted">
-                                            <i class="bi bi-eye me-1"></i>
-                                            <span id="view-mock2">0</span> marta yechildi
-                                        </div>
-                                        <div class="question-footer">
-                                            30 ta savol
+                                            25 questions
                                         </div>
                                     </div>
                                 </div>
@@ -506,30 +492,29 @@
                         <div class="d-flex align-items-center gap-3">
                             <i class="bi bi-telegram fs-1"></i>
                             <div class="text-start">
-                                <h5 class="fw-bold mb-1">Telegram kanalimiz</h5>
-                                <p class="mb-0 small">Eng so‘nggi yangiliklar, testlar va caselar uchun.</p>
+                                <h5 class="fw-bold mb-1">Our Telegram channel</h5>
+                                <p class="mb-0 small">The latest news, tests and cases</p>
                             </div>
                         </div>
                         <a href="https://t.me/imipulse" target="_blank" class="btn btn-light btn-sm px-4 fw-semibold">
-                            Qo‘shilish <i class="bi bi-arrow-right-circle ms-1"></i>
+                            Join <i class="bi bi-arrow-right-circle ms-1"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- BOTTOM NAVIGATION FOOTER -->
         <nav class="bottom-nav d-lg-none">
             <a href="index.html" class="nav-item active">
                 <i class="bi bi-house-fill"></i>
-                <span>Asosiy</span>
+                <span>Home</span>
             </a>
             <a href="tests.html" class="nav-item">
                 <i class="bi bi-ui-checks-grid"></i>
-                <span>Testlar</span>
+                <span>Tests</span>
             </a>
             <a href="cases.html" class="nav-item">
                 <i class="bi bi-journal-text"></i>
-                <span>Caselar</span>
+                <span>Cases</span>
             </a>
         </nav>
     </section>
@@ -544,7 +529,7 @@
                     <h6 id="test-title" class="mb-0 fw-semibold"></h6>
 
                     <div class="d-flex align-items-center gap-2">
-                        <span id="timer" class="tg-timer">⏱ 20s</span>
+                        <span id="timer" class="tg-timer">⏱ 25s</span>
                         <button onclick="stopTest()" class="tg-close-btn">
                             <i class="bi bi-x-lg"></i>
                         </button>
@@ -569,9 +554,9 @@
     <div id="certificate-popup" class="modal fade" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content" style="border-radius:20px; background:#f1f5f9; padding:20px; text-align:center;">
-                <h5 class="fw-bold mb-3">Sertifikat olish uchun ismingizni kiriting</h5>
+                <h5 class="fw-bold mb-3">Write your name to take the sertificate</h5>
                 <input type="text" id="cert-name-input" class="form-control mb-3" placeholder="Ism Familiya">
-                <button class="btn btn-primary w-50" onclick="generateCertificate()">Yuklab olish</button>
+                <button class="btn btn-primary w-50" onclick="generateCertificate()">Download</button>
 
             </div>
         </div>
@@ -620,11 +605,17 @@
             <img src="Pulse.jpg" alt="Pulse Logo"
                 style="width:100px; height:100px; border-radius:50%; box-shadow:0 5px 20px rgba(0,0,0,0.3); object-fit:cover;">
         </div>
+
+
     </div>
 
 
 
-    <script src="finals.js"></script>
+
+
+
+    <script src="latin.js"></script>
+
 
 
     <script>
@@ -635,24 +626,22 @@
                 .map(({ value }) => value);
         }
 
-        function randomizeTest(questions) {
-            return shuffle(questions).map(question => {
-                const shuffledAnswers = shuffle(question.a);
-
+        // Har safar test bosilganda 25 ta savolni random tanlash va javoblarni ham random qilish
+        function getRandomTest(questions, n = 25) {
+            const shuffledQuestions = shuffle(questions).slice(0, n);
+            return shuffledQuestions.map(q => {
+                const shuffledAnswers = shuffle(q.a);
                 return {
-                    q: question.q,
+                    q: q.q,
                     a: shuffledAnswers,
-                    correct: shuffledAnswers.indexOf(
-                        question.a[question.correct]
-                    )
+                    correct: shuffledAnswers.indexOf(q.a[q.correct]) // original to'g'ri javob indexi
                 };
             });
         }
 
 
         const tests = {
-            mock1: randomizeTest(TEST_QUESTIONS.mock1),
-            mock2: randomizeTest(TEST_QUESTIONS.mock2),
+            mock1: getRandomTest(TEST_QUESTIONS.mock1),
         };
 
         // Sertifikat yaratish funksiyasida
@@ -692,8 +681,7 @@
             const percent = Math.round((score / currentTest.length) * 100);
 
             const testTitleMap = {
-                mock1: "Yakuniy Mock 1",
-                mock2: "Anatomy Chapter 1"
+                mock1: "FE Latin",
             };
 
             const certData = {
@@ -717,6 +705,7 @@
         }
 
 
+
         function updateViews(testName) {
             let views = localStorage.getItem(`views_${testName}`);
             views = views ? parseInt(views) + 1 : 1;
@@ -725,7 +714,7 @@
         }
 
         function loadViews() {
-            ['mock1', 'mock2'].forEach(test => {
+            ['mock1'].forEach(test => {
                 const views = localStorage.getItem(`views_${test}`) || 0;
                 document.getElementById(`view-${test}`).innerText = views;
             });
@@ -743,6 +732,8 @@
             currentIndex = 0;
             score = 0;
 
+            currentTest = getRandomTest(TEST_QUESTIONS[testName], 25);
+
             document.getElementById('test-selection').classList.add('d-none');
             document.getElementById('test-screen').classList.remove('d-none');
             document.getElementById('result').classList.add('d-none');
@@ -758,13 +749,13 @@
         let currentIndex = 0;
         let score = 0;
         let timer;
-        let timeLeft = 25;
+        let timeLeft = 45;
 
         function showResultPopup() {
             document.getElementById('test-screen').classList.add('d-none');
 
             document.getElementById('final-score').innerText =
-                `Siz ${score} / ${currentTest.length} ta savolga to‘g‘ri javob berdingiz`;
+                `Your score is: ${score} / ${currentTest.length}`;
 
             const modalEl = document.getElementById('resultModal');
             const modal = new bootstrap.Modal(modalEl, {
@@ -782,7 +773,7 @@
         function shareResult() {
             const text =
                 `🩺 Pulse Medical\n` +
-                `📊 Mock test natijam:\n` +
+                `📊 My result:\n` +
                 `✅ ${score} / ${currentTest.length}\n\n`
 
 
@@ -804,7 +795,7 @@
 
             const q = currentTest[currentIndex];
             document.getElementById('test-title').innerText =
-                `Savol ${currentIndex + 1}`;
+                `Question ${currentIndex + 1}`;
             document.getElementById('question-container').innerText = q.q;
 
             const answerButtons = document.getElementById('answer-buttons');
@@ -819,7 +810,7 @@
             });
 
             clearInterval(timer);
-            timeLeft = 25;
+            timeLeft = 45;
             document.getElementById('timer').innerText = `⏱ ${timeLeft}s`;
 
             timer = setInterval(() => {
@@ -866,7 +857,7 @@
 
 
         function stopTest() {
-            if (confirm("Rostdan testni tugatmoqchimisiz?")) {
+            if (confirm("Really want to end the test?")) {
                 clearInterval(timer);
                 document.getElementById('test-screen').classList.add('d-none');
                 document.getElementById('test-selection').classList.remove('d-none');
@@ -887,7 +878,7 @@
         }
 
         // Sahifa yuklanganda barcha viewlarni real-time ko‘rsatish
-        ['mock1', 'mock2'].forEach(test => updateGlobalViews(test));
+        ['mock1'].forEach(test => updateGlobalViews(test));
 
         function startTest(testName) {
             // Global view +1
@@ -946,7 +937,7 @@
             });
         }
 
-        ['mock1', 'mock2'].forEach(test => updateGlobalViews(test));
+        ['mock1'].forEach(test => updateGlobalViews(test));
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {

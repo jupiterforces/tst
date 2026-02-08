@@ -208,4 +208,303 @@ window.TEST_QUESTIONS = {
       correct: 2,
     },
   ],
+  mock2: [
+    {
+      q: "Muskulning nisbatan qimirlamaydigan birikish joyi nima deyiladi?",
+      a: ["Insertion", "Origin", "Raphe", "Aponevroz"],
+      correct: 1,
+    },
+    {
+      q: "Fibroz bo‘g‘imlar funksional jihatdan qanday bo‘ladi?",
+      a: [
+        "Kam harakatchan",
+        "To‘liq erkin",
+        "Ko‘p yo‘nalishli",
+        "Faqat aylanuvchi",
+        "Ko'p harakatchan",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Oshiq-moshiq (ginglimus) bo‘g‘imning harakati qanday?",
+      a: [
+        "Faqat bukish va yozish",
+        "Aylana harakat",
+        "Sirpanish",
+        "Sirkumduksiya",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Sharsimon (ball-and-socket) bo‘g‘imning xususiyati nima?",
+      a: [
+        "Barcha yo‘nalishlarda erkin harakat",
+        "bukish va yozish",
+        "sirpanish",
+        "Faqat aylanma",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Sistemali sirkulatsiyada qon qaysi tomir orqali chiqadi?",
+      a: [
+        "Aorta orqali chiqadi",
+        "Pulmonar vena orqali",
+        "Yuqori kovak orqali",
+        "Pastki kovak orqali",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Yurak faoliyatini qaysi sistema boshqaradi?",
+      a: [
+        "Avtonom nerv sistemasi",
+        "Somatik nerv sistemasi",
+        "Markaziy nerv sistemasi",
+        "Periferik nerv sistemasi",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Asosiy absorbsiya qayerda kechadi?",
+      a: [
+        "Ingichka ichakda",
+        "Yo‘g‘on ichakda",
+        "Oshqozon ichida",
+        "Og‘iz bo‘shlig‘ida",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Gaz almashinuvi qayerda sodir bo‘ladi?",
+      a: [
+        "Alveola devorida",
+        "Bronx ichida",
+        "Hiqqildoq qismida",
+        "Kekirdak bo‘shlig‘ida",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Epidermis qaysi qatlam?",
+      a: [
+        "Yuzaki epiteliy",
+        "Chuqur biriktiruvchi",
+        "Yog‘li qatlam",
+        "Muskulli qatlam",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Tirnoqlar qaysi to‘qimadan hosil?",
+      a: [
+        "Epidermis qalinlashuvi",
+        "Dermis tolalari",
+        "Gipodermis yog‘i",
+        "Muskul tolasi",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Pulmonar sirkulatsiyaning asosiy vazifasi nima?",
+      a: [
+        "Gaz almashinuv vazifasi",
+        "Oziq moddalar tashish",
+        "Gormon tarqatish vazifasi",
+        "Chiqindi chiqarish vazifasi",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Periferik nerv sistemasi nimadan tashkil topgan?",
+      a: [
+        "Kranial spinal nervlar",
+        "Bosh orqa miya",
+        "Po‘stloq yadrolar",
+        "Trakt qorinchalar",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Funksional jihatdan nerv sistemasi nimaga bo‘linadi?",
+      a: [
+        "Somatik viseral tizim",
+        "Markaziy periferik tizim",
+        "Sensor motor tizim",
+        "Ongli reflektor tizim",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Somatik nerv sistemasi nimani boshqaradi?",
+      a: [
+        "Ixtiyoriy harakatlar",
+        "Ichki organlar",
+        "Bez sekretsiyasi",
+        "Yurak faoliyati",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Nerv sistemasining struktura birligi nima?",
+      a: [
+        "Neyron hujayrasi hisoblanadi",
+        "Neyrogliya hujayrasi hisoblanadi",
+        "Gangliy tuzilmasi hisoblanadi",
+        "Akson tolasi hisoblanadi",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Dendritlarning asosiy vazifasi nima?",
+      a: [
+        "Impuls olib keladi",
+        "Impuls olib ketadi",
+        "Mielin hosil qiladi",
+        "Sinaps hosil qiladi",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Aksonlarning asosiy vazifasi nima?",
+      a: [
+        "Impuls olib ketadi",
+        "Impuls olib keladi",
+        "Axborot saqlaydi",
+        "Mielin parchalaydi",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Bipolar neyronlar qaysi sezgilarda uchraydi?",
+      a: [
+        "Hid ko‘rish eshitish",
+        "Og‘riq harorat teginish",
+        "Bosim propriosepsiya sezgi",
+        "Motor reflektor harakat",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Multipolar neyronlar qayerda keng tarqalgan?",
+      a: [
+        "Markaziy nerv sistemasida",
+        "Periferik gangliylarda",
+        "Sensor nervlarda",
+        "Retseptor hujayralarda",
+      ],
+      correct: 0,
+    },
+    {
+      q: "MNS da mielinni kim hosil qiladi?",
+      a: [
+        "Oligodendrosit hujayralari hosil",
+        "Shvann hujayralari hosil",
+        "Astrosit hujayralari hosil",
+        "Mikrogliya hujayralari hosil",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Orqa miyada kulrang modda qayerda joylashgan?",
+      a: [
+        "Markaziy qismda joylashgan",
+        "Periferik qismda joylashgan",
+        "Ventral tomonda joylashgan",
+        "Dorsal tomonda joylashgan",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Kattalarda konus medullaris qayerda tugaydi?",
+      a: [
+        "L1 L2 darajasida",
+        "L3 L4 darajasida",
+        "T12 L1 darajasida",
+        "L4 L5 darajasida",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Osteoblastlarning vazifasi qaysi?",
+      a: [
+        "Suyakni yemirish",
+        "Kalsiyni chiqarish",
+        "Suyak hosil qilish",
+        "Minerallarni parchalanishi",
+      ],
+      correct: 2,
+    },
+    {
+      q: "Qalqon oldi bezi gormoni suyaklarga qanday ta’sir qiladi?",
+      a: [
+        "Suyak hosil bo‘lishini kuchaytiradi",
+        "Suyak yemirilishini kuchaytiradi",
+        "Osteoid sintezini kamaytiradi",
+        "Minerallanishni tezlashtiradi",
+      ],
+      correct: 1,
+    },
+    {
+      q: "Osteomalatsiyaning asosiy sababi qaysi?",
+      a: [
+        "Osteoklast faolligining ortishi",
+        "Vitamin D yetishmovchiligi",
+        "Osteoblastlarning ko‘payishi",
+        "Kollagen ortiqchaligi",
+      ],
+      correct: 1,
+    },
+    {
+      q: "Osteoporozda qaysi holat asosiy mexanizm hisoblanadi?",
+      a: [
+        "Suyak hosil bo‘lishi ortishi",
+        "Rezorbsiya va formatsiya tengligi",
+        "Rezorbsiya formatsiyadan tez kechishi",
+        "Osteoid ortiqcha sintezi",
+      ],
+      correct: 2,
+    },
+    {
+      q: "Osteopetrozda qaysi o‘zgarish kuzatiladi?",
+      a: [
+        "Suyak massasining kamayishi",
+        "Suyak ko‘migi bo‘shlig‘ining torayishi",
+        "Suyak egiluvchanligining ortishi",
+        "Diploening kengayishi",
+      ],
+      correct: 1,
+    },
+    {
+      q: "Buyrakning asosiy vazifasi?",
+      a: [
+        "Qonni tozalash",
+        "Gormon sekretsiya",
+        "Qon ishlab",
+        "Energiya ishlab",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Sharsimon bo‘g‘imga misol qaysi bo‘lishi mumkin?",
+      a: [
+        "Yelka va son-chanoq bo‘g‘imlari",
+        "Bilak bo‘g‘imi",
+        "Qov simfizi",
+        "Atlantoaksial bo‘g‘im",
+      ],
+      correct: 0,
+    },
+    {
+      q: "Bo‘g‘im, uni harakatlantiruvchi mushak va teri bir nerv bilan innervatsiyalanishini qaysi qonun tushuntiradi?",
+      a: [
+        "Hilton qonuni",
+        "Volf qonuni",
+        "Laplas qonuni",
+        "Sherrington qonuni",
+        "Boyl qonuni",
+      ],
+      correct: 0,
+    },
+  ],
 };
