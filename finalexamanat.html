@@ -391,6 +391,16 @@
     </style>
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QX686G4TT9"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-QX686G4TT9');
+</script>
+
 <body class="bg-light">
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
@@ -420,7 +430,7 @@
                         <button onclick="reviewMistakes()" class="btn btn-success">
                             ⚠️ Review Mistakes
                         </button>
-                        <button onclick="generateCertificate()()" class="btn btn-success">
+                        <button onclick="generateCertificate()" class="btn btn-success">
                             🎓 Download the sertificate
                         </button>
                         <button onclick="shareResult()" class="btn btn-telegram">
@@ -460,7 +470,7 @@
                                 <!-- Suyaklar -->
                                 <div class="col-6 col-md-3">
                                     <div class="test-card"
-                                        onclick="window.location.href='https://jupiterforces.github.io/tst/finalexamanat.html?test=mock1'">
+                                        onclick="window.location.href='http://pulseimi.qzz.io/finalexamanat.html?test=mock1'">
                                         <div class="test-icon bg-success-subtle text-success">
                                             <i class="bi bi-journal-medical fs-3"></i>
                                         </div>
@@ -472,7 +482,7 @@
                                 </div>
                                 <div class="col-6 col-md-3">
                                     <div class="test-card"
-                                        onclick="window.location.href='https://jupiterforces.github.io/tst/finalexamanat.html?test=mock2'">
+                                        onclick="window.location.href='http://pulseimi.qzz.io/finalexamanat.html?test=mock2'">
                                         <div class="test-icon bg-success-subtle text-success">
                                             <i class="bi bi-journal-medical fs-3"></i>
                                         </div>
@@ -719,19 +729,6 @@
 
 
 
-        function updateViews(testName) {
-            let views = localStorage.getItem(`views_${testName}`);
-            views = views ? parseInt(views) + 1 : 1;
-            localStorage.setItem(`views_${testName}`, views);
-            document.getElementById(`view-${testName}`).innerText = views;
-        }
-
-        function loadViews() {
-            ['mock1'].forEach(test => {
-                const views = localStorage.getItem(`views_${test}`) || 0;
-                document.getElementById(`view-${test}`).innerText = views;
-            });
-        }
 
         function getTest(testName) {
             return randomizeTest(TEST_QUESTIONS[testName]);
@@ -739,8 +736,6 @@
 
 
         function startTest(testName) {
-            updateViews(testName); // 👁 view +1
-
             currentTest = getTest[testName];
             currentIndex = 0;
             score = 0;
@@ -754,7 +749,6 @@
             showQuestion();
         }
 
-        window.onload = loadViews;
 
 
         let currentTest = [];
@@ -888,26 +882,11 @@
             }
         }
 
-        // Testni bosganingizda view +1 qilish
-        function updateGlobalViews(testName) {
-            const ref = db.ref(`views/${testName}`);
-
-            // Transaction bilan +1
-            ref.transaction(current => (current || 0) + 1);
-
-            // Real-time ko‘rsatish
-            ref.on('value', snapshot => {
-                document.getElementById(`view-${testName}`).innerText = snapshot.val() || 0;
-            });
-        }
-
-        // Sahifa yuklanganda barcha viewlarni real-time ko‘rsatish
-        ['mock1'].forEach(test => updateGlobalViews(test));
-
         function startTest(testName) {
-            // Global view +1
-            const ref = db.ref(`views/${testName}`);
-            ref.transaction(current => (current || 0) + 1);
+
+            analytics.logEvent("start_test", {
+                test_name: testName
+            });
 
             // Testni boshlash
             currentTest = tests[testName];
@@ -946,12 +925,17 @@
 
     </script>
 
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Firebase App -->
     <!-- Firebase CDN -->
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
@@ -974,16 +958,10 @@
         firebase.initializeApp(firebaseConfig);
         const db = firebase.database();
 
-        // Global view funksiyasi
-        function updateGlobalViews(testName) {
-            const ref = db.ref(`views/${testName}`);
-            ref.transaction(current => (current || 0) + 0);
-            ref.on('value', snapshot => {
-                document.getElementById(`view-${testName}`).innerText = snapshot.val() || 0;
-            });
-        }
+        const analytics = firebase.analytics();
 
-        ['mock1'].forEach(test => updateGlobalViews(test));
+
+        analytics.logEvent("page_open");
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -997,6 +975,5 @@
         });
     </script>
 </body>
-
 
 </html>
