@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- SEO Meta -->
+    <meta name="description"
+        content="Pulse Medical – tibbiy testlar, ishonchli manbalar va zamonaviy bilim platformasi. Talabalar va mutaxassislar uchun.">
+
+    <meta name="keywords"
+        content="Pulse Medical, tibbiy testlar, anatomiya test, medical platform, tibbiyot, online test">
+
+    <meta name="author" content="Pulse Medical">
+
+    <!-- Open Graph (Telegram / Facebook) -->
+    <meta property="og:title" content="Pulse Medical">
+    <meta property="og:description" content="Yakuniy nazorat uchun Mock testlar">
+    <meta property="og:image" content="Pulse.jpg">
+    <meta property="og:type" content="website">
+
+    <title>Final exam</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QX686G4TT9"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-QX686G4TT9');
+</script>
+
+
+<body class="bg-light">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a href="#" class="navbar-brand d-flex align-items-center gap-2 fw-semibold">
+                <img src="/assets/img/PulseGo.jpg" width="40" height="40" class="rounded-circle">
+                Pulse Go
+            </a>
+        </div>
+    </nav>
+
+    <!-- TEST SELECTION -->
+
+    <section id="test-selection" class="py-3 bg-light">
+        <div class="container">
+            <div class="accordion border-0 mb-3 shadow-sm" id="anatomyAccordion">
+
+                <div class="accordion-item border-0">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button fw-semibold py-2" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#anatomyTests" aria-expanded="true">
+
+                            <i class="bi bi-heart-pulse me-2 text-danger"></i>Anatomy
+                        </button>
+                    </h2>
+
+                    <div id="anatomyTests" class="accordion-collapse collapse show">
+                        <div class="accordion-body pt-3">
+
+                            <div class="row g-3">
+
+                                <!-- Suyaklar -->
+                                <div class="col-6 col-md-3">
+                                    <div class="test-card" onclick="startTest('mock1')">
+                                        <div class="test-icon bg-success-subtle text-success">
+                                            <i class="bi bi-journal-medical fs-3"></i>
+                                        </div>
+                                        <div class="test-title fw-semibold">Semester 1</div>
+                                        <div class="question-footer">
+                                            30 questions
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <nav class="bottom-nav d-lg-none">
+            <a href="/" class="nav-item">
+                <i class="bi bi-house-fill"></i>
+                <span>Home</span>
+            </a>
+            <a href="/tests" class="nav-item active">
+                <i class="bi bi-ui-checks-grid"></i>
+                <span>Tests</span>
+            </a>
+            <a href="/cases/" class="nav-item">
+                <i class="bi bi-journal-text"></i>
+                <span>Cases</span>
+            </a>
+        </nav>
+    </section>
+
+    <div id="common-modals"></div>
+
+    <script src="/anatomy/eng/review/tests.js"></script>
+    <script src="/assets/js/test.js"></script>
+
+
+
+
+    <script>
+        const tests = {
+            mock1: getRandomTest(TEST_QUESTIONS.mock1, 20),
+            mock2: getRandomTest(TEST_QUESTIONS.mock2, 20),
+        };
+
+        const testTitleMap = {
+            mock1: "YYYYYY",
+            mock2: "OOOOO"
+        };
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pulse Medical Certificate</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: #0f172a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Playfair Display', serif;
+        }
+
+        #certificate {
+            width: 900px;
+            height: 600px;
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            border-radius: 24px;
+            padding: 60px;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        /* ===============================
+   MOBILE CERTIFICATE MODAL UI
+================================ */
+        /* MOBIL MAX-WIDTH 576px uchun to‘liq responsive modal */
+        @media (max-width: 372px) {
+
+            /* Modal container (dialog) */
+            #nameModal .modal-dialog {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Modal content styling */
+            #nameModal .modal-content {
+                width: 100%;
+                height: 100vh;
+                border-radius: 0 !important;
+                padding: 40px 24px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 24px;
+                box-shadow: none;
+                /* Mobil uchun chekka soya yo‘q */
+            }
+
+            /* Modal title */
+            #nameModal h5 {
+                font-size: 28px;
+                font-weight: 700;
+                letter-spacing: 0.5px;
+                text-align: center;
+                margin-bottom: 16px;
+            }
+
+            /* Input field */
+            #nameModal input.form-control {
+                font-size: 20px;
+                padding: 18px 16px;
+                border-radius: 16px;
+            }
+
+            /* Button */
+            #nameModal button {
+                font-size: 20px;
+                padding: 18px 16px;
+                border-radius: 16px;
+                font-weight: 700;
+                width: 100%;
+            }
+        }
+
+        #screenshot-hint {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-size: 14px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="certificate">
+        <div class="modal fade" id="nameModal" tabindex="-1" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+                <div class="modal-content name-modal text-center">
+                    <h5 class="fw-bold mb-4">Sertifikat olish</h5>
+
+                    <input id="nameInput" type="text" class="form-control mb-4" placeholder="Ism va familiya">
+
+                    <button class="btn btn-primary w-100" onclick="saveNameAndGenerate()">
+                        🎓 Sertifikatni yuklash
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="screenshot-hint">
+            📸 Screenshot qiling Telegramdan yuklab bo'lmaydi
+        </div>
+
+        <h1 class="fw-bold">Pulse Medical</h1>
+        <p class="text-secondary">PROUDLY PRESENTED TO</p>
+
+        <h2 id="cert-name" class="my-3"></h2>
+
+        <p id="cert-score" class="fs-5 d-flex justify-content-center align-items-center gap-2">
+            <i class="bi bi-check-circle-fill text-success fs-3"></i>
+        </p>
+
+        <div class="my-4" style="height:2px;background:linear-gradient(to right,#ffd700,#fbbf24);"></div>
+
+        <img src="Pulse.jpg" width="90" class="rounded-circle shadow">
+
+        <div class="footer" id="cert-date"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script>
+        const data = JSON.parse(localStorage.getItem("certificateData"));
+        const modal = new bootstrap.Modal(document.getElementById("nameModal"));
+
+        if (!data) {
+            alert("Sertifikat ma’lumotlari topilmadi");
+        } else {
+            modal.show();
+        }
+
+        function saveNameAndGenerate() {
+            const name = document.getElementById("nameInput").value.trim();
+            if (!name) {
+                alert("Iltimos, ism familiyangizni kiriting");
+                return;
+            }
+
+            // Name ni saqlash
+            data.name = name;
+            localStorage.setItem("certificateData", JSON.stringify(data));
+
+            // Sertifikatni to‘ldirish
+            document.getElementById("cert-name").innerText = data.name;
+            document.getElementById("cert-score").innerHTML +=
+                `${data.score} / ${data.total} (${data.percent}%) • ${data.testTitle}`;
+            document.getElementById("cert-date").innerText =
+                `Pulse Medical • ${data.date}`;
+
+            modal.hide();
+
+            // 📥 AVTOMATIK YUKLASH
+            setTimeout(downloadCertificate, 500);
+        }
+
+        function downloadCertificate() {
+            const cert = document.getElementById("certificate");
+
+            html2canvas(cert, { scale: 2 }).then(canvas => {
+                const link = document.createElement("a");
+                link.href = canvas.toDataURL("image/png");
+                link.download = "Pulse_Medical_Certificate.png";
+                link.click();
+            });
+        }
+    </script>
+
+    <!-- NAME INPUT MODAL -->
+
+</body>
+
+</html>

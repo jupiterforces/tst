@@ -1,0 +1,75 @@
+<!-- RESULT MODAL -->
+<div class="modal fade" id="resultModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content result-modal">
+            <div class="modal-body text-center p-4">
+
+                <div class="result-icon mb-3">
+                    <i class="bi bi-trophy-fill"></i>
+                </div>
+
+                <h5 class="fw-bold mb-2">Here we go 🎉</h5>
+                <p id="final-score" class="result-score mb-3"></p>
+
+                <div class="d-grid gap-2">
+                    <button onclick="reviewMistakes()" class="btn btn-success">
+                        ⚠️ Xatolarni to'g'rilash
+                    </button>
+                    <button onclick="generateCertificate()" class="btn btn-success">
+                        🎓 Sertifikatni yuklash
+                    </button>
+                    <button onclick="shareResult()" class="btn btn-telegram">
+                        <i class="bi bi-telegram me-2"></i> Natijani ulashish
+                    </button>
+
+                    <button onclick="closeResult()" class="btn btn-outline-secondary">
+                        Yopish
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TEST SCREEN SECTION -->
+<section class="pb-5 mt-3">
+    <div class="container d-flex justify-content-center">
+        <div id="test-screen" class="tg-test-card d-none">
+
+            <!-- TOP BAR -->
+            <div class="tg-test-header">
+                <h6 id="test-title" class="mb-0 fw-semibold"></h6>
+
+                <div class="d-flex align-items-center gap-2">
+                    <span id="timer" class="tg-timer">⏱ 25s</span>
+                    <button onclick="stopTest()" class="tg-close-btn">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- QUESTION -->
+            <div class="tg-question">
+                <p id="question-container"></p>
+            </div>
+
+            <!-- ANSWERS -->
+            <div id="answer-buttons" class="tg-answers"></div>
+
+            <!-- RESULT (fallback) -->
+            <div id="result" class="d-none"></div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CERTIFICATE POPUP -->
+<div id="certificate-popup" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="border-radius:20px; background:#f1f5f9; padding:20px; text-align:center;">
+            <h5 class="fw-bold mb-3">Write your name to take the sertificate</h5>
+            <input type="text" id="cert-name-input" class="form-control mb-3" placeholder="Ism Familiya">
+            <button class="btn btn-primary w-50" onclick="generateCertificate()">Download</button>
+        </div>
+    </div>
+</div>
